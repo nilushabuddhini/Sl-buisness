@@ -19,7 +19,7 @@ const userroutes = require('./routes/users')
 const app = express()
 
 app.use(cors({
-    origin:['http://localhost:3000', 'http://localhost:3000/login', 'http://localhost:3000/signup', 'http://localhost:3000/global', 'http://localhost:3000/order', 'http://localhost:3000/order/back/getorders'],
+    origin:['https://slbuisnesstree.netlify.app', 'https://slbuisnesstree.netlify.app/login', 'https://slbuisnesstree.netlify.app/signup', 'https://slbuisnesstree.netlify.app/global', 'https://slbuisnesstree.netlify.app/order', 'https://slbuisnesstree.netlify.app/order/back/getorders'],
     methods: ['GET', 'POST', 'DELETE', 'PATCH']
 }))
 
