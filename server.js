@@ -16,10 +16,12 @@ const systemroutes = require('./routes/system')
 
 const userroutes = require('./routes/users')
 
+const toprated = require('./routes/topRated')
+
 const app = express()
 
 app.use(cors({
-    origin:['https://slbuisnesstree.netlify.app', 'https://slbuisnesstree.netlify.app/login', 'https://slbuisnesstree.netlify.app/signup', 'https://slbuisnesstree.netlify.app/global', 'https://slbuisnesstree.netlify.app/order', 'https://slbuisnesstree.netlify.app/order/back/getorders'],
+    origin: ['http://localhost:3000', 'http://localhost:3000/login', 'http://localhost:3000/signup', 'http://localhost:3000/global', 'http://localhost:3000/order', 'http://localhost:3000/order/back/getorders'],
     methods: ['GET', 'POST', 'DELETE', 'PATCH']
 }))
 
@@ -33,7 +35,7 @@ app.use('/',(req,res,next) => {
 app.use('/api/items', storeroutes)
 app.use('/api/system', systemroutes)
 app.use('/api/users', userroutes)
-app.use('/api/global', globalroutes)
+app.use('/api/toprated', toprated)
 
 mongoose.connect(
     process.env.MONGOOSE
